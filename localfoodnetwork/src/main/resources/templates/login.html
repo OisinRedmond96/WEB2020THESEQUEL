@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:th="http://www.thymeleaf.org"
+>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div th:insert="fragments/header :: header"></div>
+
+      <div class="row justify-content-center">
+        <div class="col-4">
+          <br> <br> <br> <br>
+          <h1>Login</h1>
+          <br>
+          <div id="login">
+            <form th:action="@{/login.html}" th:object="${user}" method="post">
+              <div class="field_container">
+                <input type="text" placeholder="Username"/>
+              </div>
+              <br>
+              <div class="field_container">
+                <input type="Password" placeholder="Password"/>
+              </div>
+              <br>
+              <button id="sign_in_button">
+                <span class="button_text">Sign In</span>
+              </button>
+              &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+              <button id="sign_up_button" th:href="@{/signup}">
+                <span class="button_text">Sign up</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <br><br><br><br><br><br><br><br><br>
+      <div th:insert="fragments/footer :: footer"></div>
+    </div>
+  </body>
+</html>
